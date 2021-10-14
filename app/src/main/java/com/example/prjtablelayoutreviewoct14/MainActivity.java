@@ -7,6 +7,8 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -96,6 +98,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Toast.makeText(this, clickedTv.getText(),Toast.LENGTH_SHORT).show();
 
         Menu aMenu = new Menu(1, clickedTv.getText().toString());
+        aMenu.setTextColor(clickedTv.getCurrentTextColor());
+
+        //here try catch is important because we can not convert our background to ColorDrawable first time
+        //but if we already set in java then we can convert it into colorDrawable
+        try{
+            aMenu.setBackgroundColor(((ColorDrawable)clickedTv.getBackground()).getColor());
+        }catch(Exception ex){
+            clickedTv.setBackgroundColor(Color.WHITE);
+            aMenu.setBackgroundColor(Color.WHITE);
+        }
+
+        //simpler way of above line
+//        ColorDrawable viewColor = (ColorDrawable) clickedTv.getBackground();
+//        int colorId = viewColor.getColor();
+//        aMenu.setBackgroundColor(colorId);
 
         Intent intent = new Intent(this, SecondActivity.class);
         intent.putExtra("selectedMenu", aMenu);

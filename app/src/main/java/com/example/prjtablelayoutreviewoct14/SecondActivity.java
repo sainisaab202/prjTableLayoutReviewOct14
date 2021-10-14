@@ -49,8 +49,22 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         edDescription.setText(aMenu.toString());
 
         btnReturn.setOnClickListener(this);
-//        rbRed.setChecked(true);
-//        rbYellow.setChecked(true);
+
+        //for text color
+        if(aMenu.getTextColor() == Color.GREEN){
+            rbGreen.setChecked(true);
+        }else if(aMenu.getTextColor() == Color.MAGENTA){
+            rbMagenta.setChecked(true);
+        }else{
+            rbRed.setChecked(true);
+        }
+
+        //for background color
+        if(aMenu.getBackgroundColor() == Color.YELLOW){
+            rbYellow.setChecked(true);
+        }else{
+            rbWhite.setChecked(true);
+        }
     }
 
     @Override

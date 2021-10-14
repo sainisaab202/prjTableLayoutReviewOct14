@@ -88,9 +88,9 @@
         android:id="@+id/tvBackColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Text Color  :"
+        android:text="Background  :"
         app:layout_constraintTop_toBottomOf="@id/tvTextColor"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="@id/tvTextColor"
         android:textSize="15dp"
         />
