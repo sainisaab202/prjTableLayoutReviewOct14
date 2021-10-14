@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             aMenu.setBackgroundColor(Color.WHITE);
         }
 
-        //simpler way of above line
+        ////simpler way of above line
 //        ColorDrawable viewColor = (ColorDrawable) clickedTv.getBackground();
 //        int colorId = viewColor.getColor();
 //        aMenu.setBackgroundColor(colorId);

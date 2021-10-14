@@ -96,6 +96,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         return false;
     }
 
+
     private boolean isSameTextColor() {
         RadioButton aRb = findViewById(radGrTextColor.getCheckedRadioButtonId());
         if(aMenu.getTextColor() == getColorCode(aRb)){
@@ -104,6 +105,10 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         return false;
     }
 
+    /**
+     *this will take a radioButton and returns its color in int
+     * @return Color code as int
+     */
     private int getColorCode(RadioButton aRb) {
         switch (aRb.getText().toString().toLowerCase()){
             case "red":
